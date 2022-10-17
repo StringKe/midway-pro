@@ -25,3 +25,20 @@ import * as pro from '@stringke/midwayjs-pro';
 6. `nanoid`, `getUrlId`, `getDataId` 用于生产 ID
 7. `applyDecorators` 用来快速合并装饰器
 
+### demo
+
+```typescript
+import { ApiController, ApiQuery } from "./decorators";
+
+@ApiController('/api')
+class UserController {
+
+  @ApiGet("/user", GetUserRes)
+  async getUserInfo(@ApiQuery() id: number) {
+    return {
+      id: 1
+    }
+  }
+}
+
+```
